@@ -31,23 +31,12 @@ form {
     <div id="student">
       <label>学校</label>
         <select id="city" onchange="choosechange()">
-          <option value="1">北京</option>
-          <option value="2">上海</option>
-          <option value="3">广州</option>
+          <option >请选择</option>
+          <option value="a">北京</option>
+          <option value="b">上海</option>
+          <option value="c">广州</option>
         </select>
-        <select id="university" >
-          <option selected="selected" value="1">请选择</option>
-          <option value="1a">北京大学</option>
-          <option value="1b">清华大学</option>
-          <option value="1c">中央财经大学</option>
-
-          <option value="2a">上海交通大学</option>
-          <option value="2b">复旦大学</option>
-          <option value="2c">同济大学</option>
-
-          <option value="3a">中山大学</option>
-          <option value="3b">华南理工大学</option>
-          <option value="3c">华南师范大学</option>
+        <select id="university" >  
         </select>
       </div>
       <div id="none">
@@ -57,8 +46,8 @@ form {
     </form>
 <script type="text/javascript">
 
-//页面开始就执行函数
-$(document).ready(choosechange());
+
+
 
 /**
  * 单选框点击的不同div的内容不同
@@ -78,19 +67,30 @@ $(document).ready(choosechange());
 /**
  * 下拉框选择的内容变化，另一个下拉框的内容变化
  */
-    function choosechange() {
-        var k=$("#city option:selected").val()            
-        $("#university option").each(function(){
-       	    var txt =$(this).val()[0];
-       	    if (txt== k) {
-       	   	$(this).show();
-       	    }
-       	    else {
-       	   	$(this).hide();
-       	    }      	   
-        })
-       
-    }
+
+var m = {
+      a : ['北京大学','清华大学','中央财经大学' ],
+      b : ['上海交通大学','复旦大学','同济大学'],  
+      c : ['中山大学','华南理工大学','华南师范大学']
+    };
+
+  function choosechange() {
+    
+    var university = $("#university"),
+    o = $("#city option:selected").val();
+
+    university.html("");
+
+    m[o].forEach(function(val){
+      var option = $('<option></option>');
+      option.html(val);
+      university.append(option);
+    });
+    
+  }
+
+
+    
 </script>
 </body>
 </html>

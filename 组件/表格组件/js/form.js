@@ -43,13 +43,13 @@ define([ "jquery"],function ($) {
 }
 	Form.prototype = {
 		alert: function(cfg){
-			var CFG = $.extend(this.cfg,cfg);
-			var tabCon = $('<table class="tab" border="1"></table>');
-			var tabHeadLen = CFG.heads.length;
-            var tabHead = CFG.heads;
-            var dataLen = CFG.datas.length;
-            var datas = CFG.datas;
-			var body = $("body");
+			var CFG = $.extend(this.cfg,cfg),
+			    tabCon = $('<table class="tab" border="1"></table>'),
+			    tabHeadLen = CFG.heads.length,
+                tabHead = CFG.heads,
+                dataLen = CFG.datas.length,
+                datas = CFG.datas,
+			    body = $("body");
 			//建立表格主体
 
             function init() {
