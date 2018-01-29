@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8"/>
+	<title>form-select</title>
+	<script src="js/jquery-1.10.2.min.js"></script>
+<style type="text/css">
+form {
+	height: 800px;
+	width: 500px;
+}
+#student {
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	display: none;
+}
+#none {
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	display: none;
+}
+</style>
+  </head>
+<body>
+  <form>
+    <input type="radio" name="message" value="0" onclick="choose()">在校生
+    <input type="radio" name="message" value="1" onclick="choose()">非在校生
+    <br/><br/>
+    <div id="student">
+      <label>学校</label>
+        <select id="city" onchange="choosechange()">
+          <option value="1">北京</option>
+          <option value="2">上海</option>
+          <option value="3">广州</option>
+        </select>
+        <select id="university" >
+          <option selected="selected" value="1">请选择</option>
+          <option value="1a">北京大学</option>
+          <option value="1b">清华大学</option>
+          <option value="1c">中央财经大学</option>
+
+          <option value="2a">上海交通大学</option>
+          <option value="2b">复旦大学</option>
+          <option value="2c">同济大学</option>
+
+          <option value="3a">中山大学</option>
+          <option value="3b">华南理工大学</option>
+          <option value="3c">华南师范大学</option>
+        </select>
+      </div>
+      <div id="none">
+        <label>就业单位</label>
+        <input type="text">
+      </div>
+    </form>
+<script type="text/javascript">
+
+//页面开始就执行函数
+$(document).ready(choosechange());
+
+/**
+ * 单选框点击的不同div的内容不同
+ */
+   function choose() {
+   	var rr = $("input[name='message']:checked").val();
+   	if (rr == 0) {
+   		$("#student").css("display","block");
+   		$("#none").css("display","none");
+   	}
+    if (rr == 1) {
+   		$("#student").css("display","none");
+   		$("#none").css("display","block");
+    }
+
+    }
+/**
+ * 下拉框选择的内容变化，另一个下拉框的内容变化
+ */
+    function choosechange() {
+        var k=$("#city option:selected").val()            
+        $("#university option").each(function(){
+       	    var txt =$(this).val()[0];
+       	    if (txt== k) {
+       	   	$(this).show();
+       	    }
+       	    else {
+       	   	$(this).hide();
+       	    }      	   
+        })
+       
+    }
+</script>
+</body>
+</html>

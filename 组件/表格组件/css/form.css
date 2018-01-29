@@ -1,0 +1,40 @@
+.tab {
+  border-collapse: collapse;
+  border: 1px solid #fff;
+  margin: 30px;
+}
+.tab td {
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+.tab thead {
+	background-color: #3c3c3c;
+  color: #fff;
+}
+.upBtn {
+  position: relative;
+  left: 10px;
+  top: -7px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid #fff;
+  border-top: none;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.downBtn {
+  position: relative;
+  left: -9px;
+  bottom: -7px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #fff;
+  border-bottom: none;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}

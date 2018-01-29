@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+	<title>diamond transform-2</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    #tbody {
+      margin: 0 auto;
+      border-collapse: collapse;
+    }
+    #tbody th,td {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #e0fcff;
+    }
+    .clear_border {
+      border: none;
+    }
+    #button {
+      margin-top: 30px;
+    }
+    #diamond {
+      width:  42px;
+      height: 42px;
+      background: #78b7bb;
+      transition: all .5s;
+      transform: rotate(0deg);
+    }
+    #direction {
+      background: #ff8356;    
+    }
+
+    </style>
+</head>
+<body>
+	<table id="tbody">
+  </table>
+  <div id="button">
+      <button onclick="moveLeft()"">tra lef</button>
+      <button onclick="moveTop()">tra top</button>
+      <button onclick="moveRight()">tra rig</button>
+      <button onclick="moveBot()">tra bot</button>
+      <button onclick="toLeft()">mov lef</button>
+      <button onclick="toTop()">mov top</button>
+      <button onclick="toRight()">mov rig</button>
+      <button onclick="toBot()">mov bot</button>
+  </div>
+  <div id="diamond" style="position: absolute; left: 660px; top: 225px">
+    <div id="direction" style="position: absolute; top: 0; left: 0;width: 42px;height: 10px">
+    </div>
+  </div> 
+</body>
+<script src="js/diamond-2.js"></script>
+</html>
