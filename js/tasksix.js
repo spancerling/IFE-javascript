@@ -51,10 +51,11 @@ function pop() {
     drag(layer,first);
 
 }
-//关闭浮出层  
-//element 添加事件的对象
-//eventOne 删除的dom对象
-//eventTwo 删除的dom对象
+/*关闭浮出层  
+*element 添加事件的对象
+*eventOne 删除的dom对象
+*eventTwo 删除的dom对象
+*/
 function turnoff(element,eventOne,eventTwo){
     element.onclick = function() {
         d.removeChild(eventOne);
@@ -75,9 +76,10 @@ var params = {
         move: false,
         flag: false
 };
-//获取元素的坐标
-//node 返回的css对象 
-//key 需要获取的属性
+/*获取元素的坐标
+*node 返回的css对象 
+*key 需要获取的属性
+*/
 function getCss(node,key) {
      return node.currentStyle ? node.currentStyle[key]:window.getComputedStyle(node,false)[key];
 }
