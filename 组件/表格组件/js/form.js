@@ -38,7 +38,10 @@ define([ "jquery"],function ($) {
     	chinese: 70,
     	total: 230
         }],
-        skinClassName: null
+        skinClassName: null,
+        //默认以最后一列为字段升序排列
+        sortWay : "up",
+        sortContent: "total"       
 	};
 }
 	Form.prototype = {
@@ -154,8 +157,14 @@ define([ "jquery"],function ($) {
 	};
 	    return datas.sort(byScore);
 }
-        //默认以最后一列为字段升序排列
-        upSort('total');
+        
+        if(CFG.sortWay == "up"){
+        	upSort(CFG.sortContent);
+        }
+        if(CFG.sortWay == "down"){
+        	downSort(CFG.sortContent);
+        }
+        
 
 		if(CFG.skinClassName){
 				tabCon.addClass(CFG.skinClassName);

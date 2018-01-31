@@ -68,16 +68,15 @@ form {
  * 下拉框选择的内容变化，另一个下拉框的内容变化
  */
 
-var m = {
+
+  function choosechange() {
+    var m = {
       a : ['北京大学','清华大学','中央财经大学' ],
       b : ['上海交通大学','复旦大学','同济大学'],  
       c : ['中山大学','华南理工大学','华南师范大学']
-    };
-
-  function choosechange() {
-    
-    var university = $("#university"),
-    o = $("#city option:selected").val();
+    },
+        university = $("#university"),
+        o = $("#city option:selected").val();
 
     university.html("");
 

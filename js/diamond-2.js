@@ -1,7 +1,7 @@
 //2018.1.11
 
 //建立表格主体
-function createTable() {
+(function createTable() {
 	var tbody = document.getElementById("tbody");
 	var tr_arr = new Array();
 	for (var i=0; i<11; i++) {
@@ -25,8 +25,8 @@ function createTable() {
 	    }
 	tbody.appendChild(tr_arr[i]);
     }
-}
-createTable();
+})();
+
 
 //定义全局变量保存小长条的方向
 var a;
