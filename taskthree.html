@@ -52,32 +52,31 @@ form {
 /**
  * 单选框点击的不同div的内容不同
  */
-   function choose() {
+function choose() {
    	var rr = $("input[name='message']:checked").val();
-   	if (rr == 0) {
-   		$("#student").css("display","block");
-   		$("#none").css("display","none");
-   	}
-    if (rr == 1) {
-   		$("#student").css("display","none");
-   		$("#none").css("display","block");
-    }
-
-    }
+   	    if (rr == 0) {
+   		      $("#student").css("display","block");
+   		      $("#none").css("display","none");
+   	    }
+        if (rr == 1) {
+   		      $("#student").css("display","none");
+   		      $("#none").css("display","block");
+        }
+}
 /**
  * 下拉框选择的内容变化，另一个下拉框的内容变化
  */
 
 
-  function choosechange() {
+function choosechange() {
     var m = {
       a : ['北京大学','清华大学','中央财经大学' ],
       b : ['上海交通大学','复旦大学','同济大学'],  
       c : ['中山大学','华南理工大学','华南师范大学']
     },
-        university = $("#university"),
-        o = $("#city option:selected").val();
-
+    university = $("#university"),
+    o = $("#city option:selected").val();
+//把上次的内容清空
     university.html("");
 
     m[o].forEach(function(val){

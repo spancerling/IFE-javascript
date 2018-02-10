@@ -157,21 +157,27 @@ function Box(little,big) {
 
 var box1 = new Box("direction","diamond");
 
+var area = document.getElementById("move");
+area.addEventListener("click",function(event){
+    var target = event.target;
+    switch(target.id){
+        case "a":
+            box1.on();
+            break;
+        case "b":
+            box1.go();
+            break;
+        case "c":
+            box1.left();
+            break;
+        case "d":
+            box1.right();
+            break;
+        case "e":
+            box1.back();
+            break;
+    }
+});
 
 
-document.getElementById("a").onclick = function(){
-    box1.on();
-};
-document.getElementById("b").onclick = function(){
-    box1.go();
-};
-document.getElementById("c").onclick = function(){
-    box1.left();
-};
-document.getElementById("d").onclick = function(){
-    box1.right();
-};
-document.getElementById("e").onclick = function(){
-    box1.back();
-};
 

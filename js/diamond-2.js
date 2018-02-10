@@ -99,7 +99,7 @@ function moveTop() {
 	forbidden();
 }
 function moveBot() {
-	
+
 	var t = parseInt(block.style.top);
 	block.style.top = t + 45 +"px";
 	forbidden();
